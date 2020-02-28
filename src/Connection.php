@@ -11,7 +11,7 @@ class Connection extends PDO
     public static function connect()
     {
         try {
-            //getPDO: heroku =true, localhost=false
+            //getConn: heroku =true, localhost=false
             require __DIR__ . '/settings.php';
             $ar = getConn(true);
             $dbnamehost = 'mysql:host=' . $ar['host'] . ';dbname=' . $ar['database'];
