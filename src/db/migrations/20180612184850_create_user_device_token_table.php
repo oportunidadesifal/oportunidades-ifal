@@ -14,8 +14,8 @@ class CreateUserDeviceTokenTable extends AbstractMigration
                 'default' => 'CURRENT_TIMESTAMP'
             ])
             ->addColumn('lastUpdate', 'timestamp', [
-                'null' => true,
-                'update' => 'CURRENT_TIMESTAMP'
+                'null' => true
+                
             ])
             ->addColumn('deleted', 'boolean', [
                 'default' => false

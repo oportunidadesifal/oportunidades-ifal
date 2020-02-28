@@ -16,8 +16,8 @@ class CreateUrgentNews extends AbstractMigration
                 'default' => 'CURRENT_TIMESTAMP'
             ])
             ->addColumn('lastUpdate', 'timestamp', [
-                'null' => true,
-                'update' => 'CURRENT_TIMESTAMP'
+                'null' => true
+                
             ])
             ->addForeignKey('authorId', 'users', 'id', [
                 'constraint' => 'fk_urgentNews_users'

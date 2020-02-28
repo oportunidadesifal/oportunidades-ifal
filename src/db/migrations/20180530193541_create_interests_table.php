@@ -16,8 +16,8 @@ class CreateInterestsTable extends AbstractMigration
                 'default' => 'CURRENT_TIMESTAMP'
             ])
             ->addColumn('lastUpdate', 'timestamp', [
-                'default' => 'CURRENT_TIMESTAMP',
-                'update' => 'CURRENT_TIMESTAMP'
+                'default' => 'CURRENT_TIMESTAMP'
+                
             ])
             ->addColumn('opportunityVersion', 'integer')
             ->addForeignKey('opportunityId', 'opportunities', 'id', [
