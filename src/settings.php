@@ -1,5 +1,5 @@
 <?php
-$heroku = false; //heroku =true, localhost=false
+$heroku = true; //heroku =true, localhost=false
 if ($heroku == true) {
     $dbstr = getenv('CLEARDB_DATABASE_URL');
 
