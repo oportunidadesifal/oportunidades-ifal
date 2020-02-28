@@ -12,10 +12,10 @@ class Connection extends PDO
     {
         try {
             //getConn: heroku =true, localhost=false
-            require __DIR__ . '/settings.php';
-            $ar = getConn(true);
-            $dbnamehost = 'mysql:host=' . $ar['host'] . ';dbname=' . $ar['database'];
-            $connect = new PDO($dbnamehost, $ar['username'], $ar['password']);
+            
+            $ar = require __DIR__ . '/settings.php';
+            $dbnamehost = 'mysql:host=' . $ar['settings']['db']['host'] . ';dbname=' . $ar['settings']['db']['database'];
+            $connect = new PDO($dbnamehost, $ar['settings']['db']['username'], $ar['settings']['db']['password']);
 
             return $connect;
         } catch (PDOException $e) {
