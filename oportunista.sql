@@ -74,7 +74,7 @@ CREATE TABLE `interests` (
   `userId` int(11) NOT NULL,
   `opportunityData` text NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastUpdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `lastUpdate` timestamp NOT NULL DEFAULT current_timestamp(),
   `opportunityVersion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -120,7 +120,7 @@ INSERT INTO `internships` (`id`, `salary`, `numberVacantJob`, `weeklyWorkLoad`, 
 CREATE TABLE `jwtblacklist` (
   `id` int(11) NOT NULL,
   `jwtId` varchar(255) NOT NULL,
-  `expTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `expTime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -162,7 +162,7 @@ CREATE TABLE `opportunities` (
   `posterBackgroundId` int(11) NOT NULL DEFAULT 0,
   `posterIconId` int(11) NOT NULL DEFAULT 0,
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastUpdate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  `lastUpdate` timestamp NULL DEFAULT NULL ,
   `deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -408,7 +408,7 @@ CREATE TABLE `urgent_news` (
   `authorId` int(11) NOT NULL,
   `subjectId` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastUpdate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `lastUpdate` timestamp NULL DEFAULT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -422,7 +422,7 @@ CREATE TABLE `userdevicetoken` (
   `user_id` int(11) NOT NULL,
   `deviceToken` text NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastUpdate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  `lastUpdate` timestamp NULL DEFAULT NULL ,
   `deleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -438,7 +438,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `category` enum('Teacher','Student') NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
-  `lastUpdate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+  `lastUpdate` timestamp NULL DEFAULT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
