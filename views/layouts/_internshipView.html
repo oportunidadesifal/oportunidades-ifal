@@ -1,0 +1,69 @@
+<div>
+    <p class="card-text">
+        <strong>Tipo de Oportunidade</strong><br>
+        Estágio
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Local</strong><br>
+        {{ opportunity.location }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Número de vagas</strong><br>
+        {{ opportunity.numberVacantJob }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Requerimentos</strong><br>
+        {{ opportunity.requirements }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Carga Horária Semanal</strong><br>
+        {{ opportunity.weeklyWorkLoad }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Expediente</strong><br>
+        {{ opportunity.shift }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Benefícios</strong><br>
+        {{ opportunity.benefits }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Salário/Bolsa</strong><br>
+        R$ {{ opportunity.salary }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Interessados</strong><br>
+        {{ opportunity.interest|length }}
+    </p>
+
+    {% if opportunity.interest|length > 0 %}
+    <table class="table">
+        <tr>
+            <th>E-mail</th>
+            <th>Nome</th>
+        </tr>
+        {% for interested in opportunity.interest %}
+        <tr>
+            <td>{{ interested.username}}</td>
+            <td>{{ interested.name }} {{ interested.surname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>

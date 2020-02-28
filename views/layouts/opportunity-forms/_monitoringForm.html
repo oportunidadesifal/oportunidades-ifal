@@ -1,0 +1,35 @@
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Monitores
+    </div>
+    <div class="card-body">
+        <input type="text" name="monitors" placeholder="Número de monitores" required value="{{ opportunity.monitors is empty ? "" : opportunity.monitors }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Bolsa
+    </div>
+    <div class="card-body">
+        <input type="text" name="scholarship" placeholder="A pesquisa tem bolsa? qual Valor?" required value="{{ opportunity.scholarship is empty ? "" : opportunity.scholarship }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Número de Monitores
+    </div>
+    <div class="card-body">
+        <input type="text" name="numberOfMonitors" placeholder="Qual a modalidade de pesquisa?" required value="{{ opportunity.numberOfMonitors is empty ? "" : opportunity.numberOfMonitors }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Código da Disciplina
+    </div>
+    <div class="card-body">
+        <input type="text" name="disciplineCode" placeholder="Digite o código da disciplina" required value="{{ opportunity.disciplineCode is empty ? "" : opportunity.disciplineCode }}">
+    </div>
+</div>

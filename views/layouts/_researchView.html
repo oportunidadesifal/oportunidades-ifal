@@ -1,0 +1,63 @@
+<div>
+    <p class="card-text">
+        <strong>Tipo de Oportunidade</strong><br>
+        Pesquisa
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Status da pesquisa</strong><br>
+        {{ opportunity.status }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Modalidade da pesquisa</strong><br>
+        {{ opportunity.modality }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Data de Início</strong><br>
+        {{ opportunity.startDate}}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Duração</strong><br>
+        {{ opportunity.duration }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Bolsa</strong><br>
+        {{ opportunity.scholarship }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Membros</strong><br>
+        {{ opportunity.members }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Interessados</strong><br>
+        {{ opportunity.interest|length }}
+    </p>
+
+    {% if opportunity.interest|length > 0 %}
+    <table class="table">
+        <tr>
+            <th>E-mail</th>
+            <th>Nome</th>
+        </tr>
+        {% for interested in opportunity.interest %}
+        <tr>
+            <td>{{ interested.username}}</td>
+            <td>{{ interested.name }} {{ interested.surname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>

@@ -1,0 +1,86 @@
+======================
+LOGIN
+Descrição: Algumas urls são protegidas contra requisições de pessoas deslogadas, portanto é essencial efetuar login para testar o resto da Aplicação.
+
+Por hora temos apenas um único login e senha no banco de dados:
+Login: admin
+senha: admin
+
+Tipo de requisição: POST
+Endereço: http://opportunista.000webhostapp.com/login
+Corpo da requisição em formato JSON:
+{
+	"username":"admin",
+	"password":"admin"
+}
+
+======================
+LOGOUT
+Descrição: Destrói a sessão de login.
+
+Tipo de requisição: GET
+Endereço: http://opportunista.000webhostapp.com/logout
+
+======================
+CADASTRAR EVENTO/ESTAGIO/MONITORIA
+Descrição: Cadastra uma oportunidade que pode ser do tipo Evento, Estágio ou Monitoria. A depender do tipo escolhido, os dados que vão no corpo da requisição variam.
+
+Tipo de requisição: POST
+Endereço: http://opportunista.000webhostapp.com/oportunidade
+Corpo da requisição:
+	
+	===CORPO REQUISIÇÃO EVENTO===
+	{
+	"title":"Nova Oportunidade de Teste",
+	"description":"Descrição da nova oportunidade de teste",
+	"type":"events",
+	"location":"Campus Maceió IFAL",
+	"eventSchedule":"Schedule de teste",
+	"eventDate":"10/10/2018",
+	"site":"www.eventodeteste.com.br",
+	"price":93.00
+	}
+
+	===CORPO REQUISIÇÃO ESTAGIO===
+	{
+		"title":"Nova Oportunidade de Teste",
+		"description":"Descrição da nova oportunidade de teste",
+		"type":"internships",
+		"salary":56600,
+		"numberVacantJob":5,
+		"weeklyWorkLoad":40,
+		"minPeriod":3,
+		"maxPeriod":8,
+		"benefits":"Plano de Saúde e Odontologico",
+		"requirements":"MYSQL",
+		"activities":"Banco de Dados Relacional",
+		"location":"Empresarial IFAL",
+		"shift":"Kenji",
+		"code":"XX",
+		"company_id":"XXX"
+	}
+
+	===CORPO REQUISIÇÃO MONITORIA===
+	{
+	"title": "Nova Oportunidade de Teste",
+	"description": "Descrição da nova oportunidade de teste",
+	"type": "monitoring",
+	"monitors": 2,
+	"scholarship": 300,
+	"numberOfMonitors": 10,
+	"discipline_code": "PRSI"
+	}
+
+======================
+RECEBER TODAS AS OPORTUNIDADES
+Descrição: A requisição retorna uma JSON com todas as oportunidades.
+
+Tipo de requisição: GET
+endereço: http://opportunista.000webhostapp.com/oportunidade
+
+======================
+RECEBER OPORTUNIDADE POR ID X
+Descrição: A requisição retorna uma JSON com a oportunidade correspondente ao ID
+
+Tipo de requisição: GET
+endereço: http://opportunista.000webhostapp.com/oportunidade/(idDaOportunidade)

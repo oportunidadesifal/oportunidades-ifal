@@ -1,0 +1,46 @@
+:root {
+    --azulOpp: #061A64;
+    --sidebar: #F9FAFC;
+    --menugray: #717273;
+}
+
+body {
+    background-color: var(--azulOpp, #061A64);
+    /*background: linear-gradient(var(--azulOpp, #061A64) 5%, #193C87);*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.content-div {
+    background-image: url('../img/vectorpaint.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-top: 0;
+}
+
+p.welcome {
+    color: white;
+    padding-right: 0.5em;
+    display: inline;
+}
+
+.teacherName {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.urgentNews {
+    font-weight: bold;
+}
+
+.whiteText {
+    color: white;
+}
+
+a.btn {
+    color: #595959;
+}
+
+a.btn.oppGreenButton {
+    color: white;
+}

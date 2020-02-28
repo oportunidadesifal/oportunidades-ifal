@@ -1,0 +1,81 @@
+:root {
+    --azulOpp: #061A64;
+    --sidebar: #F9FAFC;
+    --menugray: #717273;
+}
+
+body {
+    background-color: white;
+}
+
+.content-div {
+    background-image: url('../img/vectorpaint.svg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.pageName {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.urgentNews {
+    font-weight: bold;
+}
+
+.whiteText {
+    color: white;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.card {
+    box-shadow: 4px 4px 5px -5px #888888;
+}
+
+.card-header {
+    padding: 0px;
+}
+
+.card-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #33cccc;
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card-body > div .card-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    white-space: normal;
+}
+
+.card-text {
+    font-size: 0.9em;
+    margin-left: 0.5rem;
+    color: var(--menugray, #717273);
+}
+
+.opportunity-background {
+    background: linear-gradient(#061A64, #193C87);;
+    background-size: 100% auto;
+    width: 100%;
+}
+
+.opp-logo {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    color: var(--menugray, #717273);
+}

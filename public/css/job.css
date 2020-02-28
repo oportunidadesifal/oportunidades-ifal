@@ -1,0 +1,58 @@
+body {
+    background-color: #061A64;
+    /*background: linear-gradient(#061A64, #193C87);*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+p.welcome {
+    color: white;
+    padding-right: 0.5em;
+    display: inline;
+}
+
+.teacherName {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-header {
+    background-color: white;
+    width: 100%;
+}
+
+.card {
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.whiteText {
+    color: white;
+}
+
+a.btn {
+    color: #595959;
+}
+
+input {
+    border: none;
+    padding-top: 0px;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+}
+
+p.col-4 {
+    display: inline;
+}
+
+.oppGreenButton {
+    background-color: #91CA39;
+    color: white;
+    border-radius: 15px;
+}

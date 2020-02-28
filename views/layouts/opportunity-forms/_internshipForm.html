@@ -1,0 +1,62 @@
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Salário
+    </div>
+    <div class="card-body">
+        <input type="text" name="salary" placeholder="A pesquisa tem bolsa? qual Valor?" required value="{{ opportunity.salary is empty ? "" : opportunity.salary }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Número de vagas
+    </div>
+    <div class="card-body">
+        <input type="text" name="numberVacantJob" placeholder="Ex: 2" required value="{{ opportunity.numberVacantJob is empty ? "" : opportunity.numberVacantJob }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Carga Horária Semanal
+    </div>
+    <div class="card-body">
+        <input type="text" name="weeklyWorkLoad" placeholder="Ex: 20" required value="{{ opportunity.weeklyWorkLoad is empty ? "" : opportunity.weeklyWorkLoad }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Benefícios
+    </div>
+    <div class="card-body">
+        <textarea name="benefits" id="benefits" cols="20" rows="3" placeholder="Ex: Plano de Saúde" required>{{ opportunity.benefits is empty ? "" : opportunity.benefits }}</textarea>
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Requerimentos
+    </div>
+    <div class="card-body">
+        <textarea name="requirements" id="requirements" cols="20" rows="3" placeholder="Ex: Plano de Saúde" required>{{ opportunity.requirements is empty ? "" : opportunity.requirements }}</textarea>
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Local
+    </div>
+    <div class="card-body">
+        <input type="text" name="location" placeholder="Ex: Sede da empresa" required value="{{ opportunity.location is empty ? "" : opportunity.location }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Expediente
+    </div>
+    <div class="card-body">
+        <input type="text" name="shift" placeholder="Ex: 08h às 14" required value="{{ opportunity.shift is empty ? "" : opportunity.shift }}">
+    </div>
+</div>

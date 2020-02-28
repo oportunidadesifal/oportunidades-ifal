@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oportunista - Oportunidades</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/indexOpportunity.css">
+</head>
+<body>
+    <div class="row main-row m-0">
+
+        {% include 'layouts/_sidebar.html' %}
+
+        <div class="col-md-9 col-lg-10 pl-5 pr-5 content-div">
+
+            {% if error != false %}
+                <div class="alert alert-danger alert-dismissible mt-5">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            {% if success != false %}
+                <div class="alert alert-success alert-dismissible mt-5">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ success }}
+                </div>
+            {% endif %}
+
+            <div class="row justify-content-center mt-5">
+                <p class="pageName whiteText col-6 text-left">Oportunidades</p>
+                <p class="whiteText col-6 text-right"></p>
+            </div>
+            {% for row in opportunities|batch(2, null) %}
+                <div class="row justify-content-center mt-3">
+                    {% for opportunity in row %}
+                        <div class="col-md-6 pr-0">
+                            <a href="{{ path_for('opportunityById', {'id' : opportunity.id}) }}">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">{{ opportunity.title }}</h2>
+                                        <p class="card-text">{{ opportunity.author.name }} {{ opportunity.author.surname }}</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="opportunity-background">
+                                            <img src="/img/dev.png" alt="" class="opp-logo pt-3 pb-3" align="middle">
+                                        </div>
+                                        <div>
+                                            <p class="card-text">
+                                                {{ opportunity.description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <p class="card-text">
+                                            {{ opportunity.created|date("d/m/Y \\à\\s g:ia", "America/Maceio") }}
+                                        </p>
+                                        <div class="interest-div">
+                                            {% if user.category == "Student" %}
+                                                {% if opportunity.interest == true %}
+                                                    <form action="{{ path_for('deleteInterest', {'id' : opportunity.id}) }}" method="post">
+                                                        <button type="submit" class="button-interest fa fa-star checked-star"></button>
+                                                    </form>
+                                                {% else %}
+                                                    <form action="{{ path_for('saveInterest', {'id' : opportunity.id}) }}" method="post">
+                                                        <button type="submit" class="button-interest fa fa-star"></button>
+                                                    </form>
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                {% endfor %}
+                </div>
+            {% endfor %}
+
+            {% if opportunities|length == 10 %}
+                <div class="row mt-5 mb-5">
+                    {% if page == 0 %}
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{{ path_for('indexOpportunity', {'page' : page+1}) }}" class="btn btn-md oppGreenButton">Próxima Página</a>
+                        </div>
+                    {% else %}
+                        <div class="col-md-6 text-right pr-0">
+                            <a href="{{ path_for('indexOpportunity', {'page' : page-1}) }}" class="btn btn-md oppGreenButton">Página Anterior</a>
+                        </div>
+                        <div class="col-md-6">
+                        <a href="{{ path_for('indexOpportunity', {'page' : page+1}) }}" class="btn btn-md oppGreenButton">Próxima Página</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

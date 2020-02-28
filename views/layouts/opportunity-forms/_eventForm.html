@@ -1,0 +1,44 @@
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Location
+    </div>
+    <div class="card-body">
+        <input type="text" name="location" placeholder="Informe o local do evento" required value="{{ opportunity.location is empty ? "" : opportunity.location }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Agenda do Evento
+    </div>
+    <div class="card-body">
+        <textarea name="eventSchedule" id="scheduleText" cols="20" rows="3" required>{{ opportunity.eventSchedule is empty ? "" : opportunity.eventSchedule }}</textarea>
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Data do Evento
+    </div>
+    <div class="card-body">
+        <input type="date" name="eventDate" placeholder="dd/mm/aaaa" required value="{{ opportunity.eventDate is empty ? "" : opportunity.eventDate }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Site
+    </div>
+    <div class="card-body">
+        <input type="text" name="site" placeholder="Digite o site do evento" required value="{{ opportunity.site is empty ? "" : opportunity.site }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Preço
+    </div>
+    <div class="card-body">
+        <input type="text" name="price" placeholder="Digite o preço do evento" required value="{{ opportunity.price is empty ? "" : opportunity.price }}">
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Status
+    </div>
+    <div class="card-body">
+        <input type="text" name="status" placeholder="Qual o status atual da pesquisa" required value="{{ opportunity.status is empty ? "" : opportunity.status }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Modalidade
+    </div>
+    <div class="card-body">
+        <input type="text" name="modality" placeholder="Qual a modalidade de pesquisa?" required value="{{ opportunity.modality is empty ? "" : opportunity.modality }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Data de início
+    </div>
+    <div class="card-body">
+        <input type="date" name="startDate" placeholder="dd/mm/aaaa" required value="{{ opportunity.date is empty ? "" : opportunity.date }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Duração
+    </div>
+    <div class="card-body">
+        <input type="text" name="duration" placeholder="Qual a duração da pesquisa?" required value="{{ opportunity.duration is empty ? "" : opportunity.duration }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Bolsa
+    </div>
+    <div class="card-body">
+        <input type="text" name="scholarship" placeholder="A pesquisa tem bolsa? qual Valor?" required value="{{ opportunity.scholarship is empty ? "" : opportunity.scholarship }}">
+    </div>
+</div>
+
+<div class="card col-md-8 mt-4">
+    <div class="card-header">
+        Membros
+    </div>
+    <div class="card-body">
+        <textarea name="members" id="descriptionText" cols="20" rows="3" placeholder="Quais os membros já existentes?" required></textarea>
+    </div>
+</div>

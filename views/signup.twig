@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oportunista - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+<body>
+<div class="backgroundImage">
+    <main>
+        <div class="container">
+            <div class="row mt-4 mb-5">
+                <div class="col-md-6 col-xs-12 align-self-center justify-content-center justify-content-md-start cabecalho">
+                    <img src="/img/logo.svg" class="col-md-6" alt="Logotipo Oportunista">
+                </div>
+                <div class="col-md-6 col-xs-12 justify-content-md-end cabecalho">
+                    <a href="{{ path_for('login') }}" class="btn btn-md oppGreenButton">Login</a>
+                </div>
+            </div>
+
+            {% if error != false %}
+                <div class="alert alert-error alert-dismissible">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <div class="row justify-content-center align-content-center align-items-center">
+                <img src="/img/students.png" class="img-fluid col-xs-11 col-md-4" alt="">
+            </div>
+            <div class="row justify-content-center align-content-center align-items-center">
+                <div class="col-xs-11 col-md-4 formDiv">
+                    <form action="{{ path_for('signUpAction') }}" class="mt-4 mb-4 ml-2 mr-2" method="post">
+                        <div class="row">
+                            <input type="hidden" name="university_id" value="1">
+                            <div class="form-group col-12 formItem">
+                                <input type="text" class="form-control" name="username" placeholder="E-mail: " id="femail">
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <input type="password" name="password" class="form-control" placeholder="Senha" id="fpass">
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <select class="form-control" id="category" name="category">
+                                    <option value="student">Aluno</option>
+                                    <option value="teacher">Professor</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <input type="text" name="name" class="form-control" placeholder="Nome">
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <input type="text" name="surname" class="form-control" placeholder="Sobrenome">
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <input type="date" name="birthday" class="form-control" placeholder="Data de Nascimento: DD/MM/AAAA">
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <select class="form-control" id="gender" name="gender">
+                                    <option value="" disabled selected>Sexo</option>
+                                    <option value="m">Masculino</option>
+                                    <option value="f">Feminino</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <input type="text" name="enrollment" class="form-control" placeholder="Número de Matrícula">
+                            </div>
+
+                            <div class="form-group col-12 formItem">
+                                <button type="submit" class="btn btn-block oppGreenButton">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </main>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+:root {
+    --azulOpp: #061A64;
+    --sidebar: #F9FAFC;
+    --menugray: #717273;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    display: flex;
+}
+
+.oppGreenButton {
+    background-color: #92C945;
+    color: white;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.oppGreenButton:hover {
+    color: white;
+    background-color: #80B030;
+    border-color: transparent;
+}
+
+.side-bar {
+    background-color: var(--sidebar, #F9FAFC);
+}
+
+.side-bar ul {
+    position: fixed;
+}
+
+
+@media (max-width: 770px)
+{
+    .side-bar ul {
+        position: relative;
+    }
+}
+
+
+.main-row {
+    height: 100%;
+}
+
+.logo {
+    width: 65%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-container {
+    background-color: var(--azulOpp, #061A64);
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.profile-container {
+    background-color: var(--sidebar, #F9FAFC);
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    max-width: 20%;
+}
+
+.profile-data {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile-data p {
+    font-size: 0.9rem;
+    line-height: 50%;
+    vertical-align: middle;
+    color: var(--menugray, #717273);
+}
+
+.nav-item a {
+    color: var(--menugray, #717273);
+}
+
+.nav-item a:hover {
+    color: #474849;
+}
+
+li.nav-item:hover {
+    border-bottom: 1px solid #f1f1f1;
+    box-shadow: 4px 4px 5px -5px #888888;
+}
+
+.card-header, .card-footer {
+    background-color: white;
+    width: 100%;
+}
+
+.row a:hover > .card {
+    box-shadow: 0px 0px 20px 0px #888888;
+    transform: scale(1.04);
+}
+
+.row a:hover {
+    text-decoration: none;
+}
+
+.interest-input {
+    display: none;
+}
+
+a .fa-star {
+    font-size: 1.3em;
+    margin: 0px;
+    color: var(--menugray, #717273);
+}
+
+a .fa-star:hover {
+    color: #fd4;
+    transition: all .25s;
+}
+
+button.fa-star {
+    font-size: 1.3em;
+    margin: 0px;
+    color: var(--menugray, #717273);
+}
+
+button.fa-star:hover {
+    color: #fd4;
+    transition: all .25s;
+}
+
+.checked-star {
+    color: #fd4 !important;
+}
+
+button.checked-star:hover {
+    color: var(--menugray, #717273) !important;
+}
+
+.button-interest {
+    border: none;
+    background-color: transparent;
+}
+
+.interest-div {
+    float: right;
+}
+
+.card-footer p {
+    display: inline-block;
+}

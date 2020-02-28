@@ -1,0 +1,57 @@
+<div>
+    <p class="card-text">
+        <strong>Tipo de Oportunidade</strong><br>
+        Evento
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Local</strong><br>
+        {{ opportunity.location }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Data</strong><br>
+        {{ opportunity.eventDate }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Agenda do Evento</strong><br>
+        {{ opportunity.eventSchedule }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Site</strong><br>
+        <a href="http://{{ opportunity.site }}">{{ opportunity.site }}</a>
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Preço</strong><br>
+        R$ {{ opportunity.price }}
+    </p>
+</div>
+<div>
+    <p class="card-text">
+        <strong>Interessados</strong><br>
+        {{ opportunity.interest|length }}
+    </p>
+
+    {% if opportunity.interest|length > 0 %}
+    <table class="table">
+        <tr>
+            <th>E-mail</th>
+            <th>Nome</th>
+        </tr>
+        {% for interested in opportunity.interest %}
+        <tr>
+            <td>{{ interested.username}}</td>
+            <td>{{ interested.name }} {{ interested.surname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>

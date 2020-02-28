@@ -1,0 +1,10 @@
+body {
+    background-image: url('../img/vectorpaint.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.formDiv {
+    background-color: white;
+    border-radius: 10px;
+}

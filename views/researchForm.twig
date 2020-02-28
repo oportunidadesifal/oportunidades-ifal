@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oportunista - Cadastro de Pesquisa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/pesquisa.css">
+</head>
+<body>
+<div class="row main-row m-0">
+
+    {% include 'layouts/_sidebar.html' %}
+
+    <div class="col-md-9 col-lg-10 mt-5 mt-sm-3">
+        <div class="row justify-content-center mt-4">
+            <p class="teacherName whiteText col-12 text-center">{{ user.profile.name }},</p>
+            <p class="whiteText">Cadastre a sua Pesquisa</p>
+        </div>
+        <form action="{{ path_for('researchSave') }}" method="post">
+            <div class="row col-sm-12 justify-content-center">
+                <input type="hidden" name="type" value="research">
+                <input type="hidden" name="posterBackgroundId" value="1">
+                <input type="hidden" name="posterIconId" value="1">
+                <div class="card col-md-8 ">
+                    <div class="card-header">
+                        Título
+                    </div>
+                    <div class="card-body">
+                        <input type="text" name="title" placeholder="Digite aqui o título da sua Pequisa" required>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Descrição
+                    </div>
+                    <div class="card-body">
+                        <textarea name="description" id="descriptionText" cols="20" rows="5" required></textarea>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Status
+                    </div>
+                    <div class="card-body">
+                        <input type="text" name="status" placeholder="Qual o status atual da pesquisa" required>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Modalidade
+                    </div>
+                    <div class="card-body">
+                        <input type="text" name="modality" placeholder="Qual a modalidade de pesquisa?" required>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Data de início
+                    </div>
+                    <div class="card-body">
+                        <input type="date" name="startDate" placeholder="dd/mm/aaaa" required>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Duração
+                    </div>
+                    <div class="card-body">
+                        <input type="text" name="duration" placeholder="Qual a duração da pesquisa?" required>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Bolsa
+                    </div>
+                    <div class="card-body">
+                        <input type="text" name="scholarship" placeholder="A pesquisa tem bolsa? qual Valor?" required>
+                    </div>
+                </div>
+
+                <div class="card col-md-8 mt-4">
+                    <div class="card-header">
+                        Membros
+                    </div>
+                    <div class="card-body">
+                        <textarea name="members" id="descriptionText" cols="20" rows="3" placeholder="Quais os membros já existentes?" required></textarea>
+                    </div>
+                </div>
+
+
+                <div class="col-md-8 mt-4 mb-5">
+                    <button type="submit" class="btn btn-block oppGreenButton">Salvar</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
