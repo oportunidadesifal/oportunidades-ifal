@@ -32,5 +32,5 @@
 
 * Fazer deploy no Heroku para rodar online(criar uma conta no heroku.com:)
 
-  * Ver teste em : https://oportunidades-ifal.herokuapp.com
+  * Ver teste em : https://ifal-oportunidades.herokuapp.com
 
