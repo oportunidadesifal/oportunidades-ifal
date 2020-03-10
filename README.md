@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/oportunidadesifal/oportunidades-ifal) 
+
 # oportunidades-ifal
 - API oportunidades IFAL
 - Projeto Oportunidades IFAL,  baseado no sistema O Oportunista. Par divulgação de oportunidades de prática profissional(estágios, monitoria, empregos e projetos) e engajamento na área(eventos).
