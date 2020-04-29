@@ -59,7 +59,19 @@ class OpportunityDao
             $typeResult = 'monitoring';
         }
 
-        $sql = "SELECT * FROM ".$typeResult." x JOIN opportunities o ON x.id = o.id WHERE o.id = :id";
+        $sql = "SELECT 
+            o.id, 
+            o.title, 
+            o.description, 
+            o.authorId, 
+            o.type,
+            o.closed, 
+            o.created,
+            o.lastUpdate,
+            o.version,
+            o.posterBackgroundId,
+            o.posterIconId
+         FROM ".$typeResult." x JOIN opportunities o ON x.id = o.id WHERE o.id = :id";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindValue(':id', $id);
         $result = $stmt->execute();
@@ -70,8 +82,8 @@ class OpportunityDao
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $opportunity = new $class($result, $result['type'], $result['authorId'], $result['id']);
-
+        #$opportunity = new $class($result, $result['type'], $result['authorId'], $result['id']);
+        $opportunity =  new Opportunity($opportunity);
         return $opportunity;
     }
 
