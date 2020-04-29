@@ -21,6 +21,6 @@ class Connection extends PDO
         } catch (PDOException $e) {
             echo 'Erro ao conectar com o MySQL: ' . $e->getMessage();
             die();
-        }
+        } 
     }
 }
